@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Resources | Aditya Kumar Singh</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         .resource-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
@@ -23,19 +26,24 @@
                 <i class="fas fa-arrow-left"></i> Back to Portfolio
             </a>
             <div class="flex gap-4">
-                <a href="https://github.com/rsys-adsingh" target="_blank" class="text-slate-400 hover:text-slate-900"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/adityakumarsinghiith" target="_blank" class="text-slate-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rsys-adsingh" target="_blank" class="text-slate-400 hover:text-slate-900" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/adityakumarsinghiith" target="_blank" class="text-slate-400 hover:text-blue-600" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </nav>
 
     <header class="py-20 bg-white border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6">
-            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs">Knowledge Base</span>
-            <h1 class="text-5xl font-black tracking-tight mt-4 mb-6">Open Technical Resources</h1>
-            <p class="text-slate-500 text-xl max-w-3xl leading-relaxed">
-                A public repository of my curated notes for core Computer Science subjects. These materials focus on the fundamentals required for high-performance systems engineering.
+            <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full font-bold text-[10px] uppercase tracking-widest mb-4">
+                Knowledge Base
+            </div>
+            <h1 class="text-5xl font-black tracking-tight mb-6">Open Technical Resources</h1>
+            <p class="text-slate-500 text-xl max-w-3xl leading-relaxed font-medium">
+                A public repository of my technical notes. These materials cover core Computer Science fundamentals used in high-performance systems and 5G-RAN engineering.
             </p>
+            <div class="mt-6 flex items-center gap-2 text-slate-400 text-sm font-semibold">
+                <i class="fas fa-eye"></i> <span>View-only mode enabled for copyrighted content.</span>
+            </div>
         </div>
     </header>
 
@@ -47,9 +55,9 @@
                     <i class="fas fa-terminal"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-3">C/C++ Basics</h3>
-                <p class="text-slate-500 mb-8 flex-grow">Advanced pointers, Memory management, OOP in C++, and performance-oriented coding patterns.</p>
-                <a href="notes/Aditya_cpp_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <p class="text-slate-500 mb-8 flex-grow">Advanced pointers, Memory management, and performance-oriented coding patterns.</p>
+                <a href="https://drive.google.com/file/d/1IDRb8j2Zi6LJVBESW95nO0_uzUl802YV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -58,9 +66,9 @@
                     <i class="fas fa-microchip"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-3">Operating Systems</h3>
-                <p class="text-slate-500 mb-8 flex-grow">Deep dive into Kernel internals: Process Scheduling, Virtual Memory, and I/O Management.</p>
-                <a href="notes/Aditya_os_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <p class="text-slate-500 mb-8 flex-grow">Process Scheduling, Virtual Memory, and I/O Management internals.</p>
+                <a href="https://drive.google.com/file/d/1r6pxmHF0hmB-nYOZj2TeJ6ZgJzgFuml7/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -69,9 +77,9 @@
                     <i class="fas fa-network-wired"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-3">Computer Networks</h3>
-                <p class="text-slate-500 mb-8 flex-grow">TCP/IP stack, Flow Control, Socket programming, and 5G Architecture fundamentals.</p>
-                <a href="notes/Aditya_cn_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <p class="text-slate-500 mb-8 flex-grow">TCP/IP stack, Flow Control, Socket programming, and 5G Architecture.</p>
+                <a href="https://drive.google.com/file/d/1IypcZ9F1PjxWV2WOpKpDDpEANKsuhDhj/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -80,9 +88,9 @@
                     <i class="fas fa-database"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-3">DBMS</h3>
-                <p class="text-slate-500 mb-8 flex-grow">ER Diagrams, Normalization, SQL, Transactions (ACID), and Indexing strategies.</p>
-                <a href="notes/Aditya_dbms_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <p class="text-slate-500 mb-8 flex-grow">SQL, Normalization, Transactions (ACID), and Indexing strategies.</p>
+                <a href="https://drive.google.com/file/d/1hZ6MUdkHDAwPJB_DOOGD4dxcA6Uw3KeD/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -90,9 +98,9 @@
                 <div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fas fa-star"></i>
                 </div>
-                <h3 class="font-bold text-2xl mb-3">Interview Prep & Short Notes</h3>
-                <p class="text-blue-50 mb-8 flex-grow">Consolidated revision for DS/Algo, System Design, and Core CS fundamentals.</p>
-                <a href="notes/Aditya_interview_prep.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-slate-100 transition">
+                <h3 class="font-bold text-2xl mb-3">Interview Prep Short Notes</h3>
+                <p class="text-blue-50 mb-8 flex-grow">Revision of DS/Algo, System Design, and Core CS for technical rounds.</p>
+                <a href="https://drive.google.com/file/d/1zbgHkSJZnCuXM7x7DVmt34vnfjUhfv30/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-slate-100 transition">
                     Get Short Notes <i class="fas fa-bolt ml-2 text-xs"></i>
                 </a>
             </div>
@@ -101,10 +109,10 @@
                 <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fas fa-memory"></i>
                 </div>
-                <h3 class="font-bold text-2xl mb-3">Computer Organization and Architecture</h3>
-                <p class="text-slate-500 mb-8 flex-grow">ISA, Pipeline stages, Cache hierarchy, and Control Unit design (IITH Reference).</p>
-                <a href="notes/Aditya_coa_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <h3 class="font-bold text-2xl mb-3">Computer Architecture</h3>
+                <p class="text-slate-500 mb-8 flex-grow">ISA, Pipeline stages, and Cache hierarchy (IITH Reference).</p>
+                <a href="https://drive.google.com/file/d/1av9v6C4v-zAsGRzN-4mOVsV3hCZzrTJz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -113,9 +121,9 @@
                     <i class="fas fa-project-diagram"></i>
                 </div>
                 <h3 class="font-bold text-2xl mb-3">TOC & Automata</h3>
-                <p class="text-slate-500 mb-8 flex-grow">Finite Automata, Context-Free Grammars, Turing Machines, and Decidability.</p>
-                <a href="notes/Aditya_toc_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <p class="text-slate-500 mb-8 flex-grow">Finite Automata, Grammars, Turing Machines, and Decidability.</p>
+                <a href="https://drive.google.com/file/d/1a8zUjTLrL3ZBMAGnDf_d6DAIoxGxZY9b/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -123,10 +131,10 @@
                 <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
                     <i class="fas fa-toggle-on"></i>
                 </div>
-                <h3 class="font-bold text-2xl mb-3">Digital Logic & Design</h3>
-                <p class="text-slate-500 mb-8 flex-grow">Boolean Algebra, Combinational Circuits, and Sequential System Design.</p>
-                <a href="notes/Aditya_dld_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
-                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                <h3 class="font-bold text-2xl mb-3">Digital Logic</h3>
+                <p class="text-slate-500 mb-8 flex-grow">Boolean Algebra, Combinational and Sequential Circuit Design.</p>
+                <a href="https://drive.google.com/file/d/1O-pAObTEAuHOgPcPgNYTloPDGhOme-69/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View on Drive <i class="fab fa-google-drive ml-2 text-xs"></i>
                 </a>
             </div>
 
@@ -135,7 +143,7 @@
 
     <footer class="py-12 border-t border-slate-200 text-center">
         <p class="text-slate-400 text-xs tracking-widest uppercase font-bold">
-            &copy; 2025 Aditya Kumar Singh • Shared under Educational License
+            &copy; 2025 Aditya Kumar Singh • Senior Software Engineer
         </p>
     </footer>
 
