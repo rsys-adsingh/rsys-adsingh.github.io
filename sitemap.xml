@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rsys-adsingh.github.io/</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2025-12-23</lastmod>
     <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://rsys-adsingh.github.io/studyresources.html</loc>
+    <lastmod>2025-12-23</lastmod>
+    <priority>0.85</priority>
   </url>
 </urlset>
