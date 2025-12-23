@@ -10,79 +10,122 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .resource-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .resource-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .resource-card:hover { transform: translateY(-8px); border-color: #1d4ed8; }
+        .gradient-bg { background: linear-gradient(135deg, #1d4ed8 0%, #06b6d4 100%); }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 leading-relaxed">
 
     <nav class="p-6 bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="index.html" class="text-blue-700 font-bold flex items-center gap-2 hover:text-blue-800 transition">
                 <i class="fas fa-arrow-left"></i> Back to Portfolio
             </a>
-            <span class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Knowledge Base</span>
+            <div class="flex gap-4">
+                <a href="https://github.com/rsys-adsingh" target="_blank" class="text-slate-400 hover:text-slate-900"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/adityakumarsinghiith" target="_blank" class="text-slate-400 hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </nav>
 
-    <header class="py-16 bg-white border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-6 text-center md:text-left">
-            <h1 class="text-4xl font-black tracking-tight mb-4">Study Resources</h1>
-            <p class="text-slate-500 text-lg max-w-2xl">
-                A collection of my curated technical notes and academic materials covering core Computer Science subjects.
+    <header class="py-20 bg-white border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs">Knowledge Base</span>
+            <h1 class="text-5xl font-black tracking-tight mt-4 mb-6">Open Technical Resources</h1>
+            <p class="text-slate-500 text-xl max-w-3xl leading-relaxed">
+                A public repository of my curated notes for core Computer Science subjects. These materials focus on the fundamentals required for high-performance systems engineering.
             </p>
         </div>
     </header>
 
-    <main class="py-20 max-w-5xl mx-auto px-6">
+    <main class="py-20 max-w-6xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-microchip"></i></div>
-                <h3 class="font-bold text-xl mb-2">Operating Systems</h3>
-                <p class="text-slate-500 text-sm mb-6">Process Management, Memory Allocation, Paging, and File Systems.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">C/C++ Basics</h3>
+                <p class="text-slate-500 mb-8 flex-grow">Advanced pointers, Memory management, OOP in C++, and performance-oriented coding patterns.</p>
+                <a href="notes/cpp_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-network-wired"></i></div>
-                <h3 class="font-bold text-xl mb-2">Computer Networks</h3>
-                <p class="text-slate-500 text-sm mb-6">OSI Model, TCP/IP, Flow Control, and Socket Programming.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Operating Systems</h3>
+                <p class="text-slate-500 mb-8 flex-grow">Deep dive into Kernel internals: Process Scheduling, Virtual Memory, and I/O Management.</p>
+                <a href="notes/os_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-memory"></i></div>
-                <h3 class="font-bold text-xl mb-2">Computer Architecture</h3>
-                <p class="text-slate-500 text-sm mb-6">ISA, Pipeline stages, Cache hierarchy, and Control Unit design.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Computer Networks</h3>
+                <p class="text-slate-500 mb-8 flex-grow">TCP/IP stack, Flow Control, Socket programming, and 5G Architecture fundamentals.</p>
+                <a href="notes/cn_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-project-diagram"></i></div>
-                <h3 class="font-bold text-xl mb-2">Theory of Computation</h3>
-                <p class="text-slate-500 text-sm mb-6">Finite Automata, Context-Free Grammars, and Turing Machines.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="gradient-bg p-8 rounded-3xl shadow-xl resource-card flex flex-col text-white">
+                <div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Interview Prep and Short Notes</h3>
+                <p class="text-blue-50 mb-8 flex-grow">Consolidated "Short Notes" for quick revision of DS/Algo, System Design, and Core CS.</p>
+                <a href="notes/interview_prep.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-slate-100 transition">
+                    Get Short Notes <i class="fas fa-bolt ml-2 text-xs"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-toggle-on"></i></div>
-                <h3 class="font-bold text-xl mb-2">Digital Logic</h3>
-                <p class="text-slate-500 text-sm mb-6">Boolean Algebra, K-Maps, Combinational & Sequential Circuits.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-memory"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Computer Organization and Architecture</h3>
+                <p class="text-slate-500 mb-8 flex-grow">ISA, Pipeline stages, Cache hierarchy, and Control Unit design (IITH Reference).</p>
+                <a href="notes/coa_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm resource-card">
-                <div class="text-blue-600 text-2xl mb-4"><i class="fas fa-sticky-note"></i></div>
-                <h3 class="font-bold text-xl mb-2">Interview Prep Notes</h3>
-                <p class="text-slate-500 text-sm mb-6">Consolidated short notes for quick revision before technical rounds.</p>
-                <a href="#" class="inline-flex items-center text-blue-700 font-bold text-sm hover:gap-2 transition-all">View Notes <i class="fas fa-chevron-right ml-1"></i></a>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">TOC & Automata</h3>
+                <p class="text-slate-500 mb-8 flex-grow">Finite Automata, Context-Free Grammars, Turing Machines, and Decidability.</p>
+                <a href="notes/toc_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm resource-card flex flex-col">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 text-xl">
+                    <i class="fas fa-toggle-on"></i>
+                </div>
+                <h3 class="font-bold text-2xl mb-3">Digital Logic and Design</h3>
+                <p class="text-slate-500 mb-8 flex-grow">Boolean Algebra, Combinational Circuits, and Sequential System Design.</p>
+                <a href="notes/dl_notes.pdf" target="_blank" class="inline-flex items-center justify-center w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-700 transition">
+                    View Full Notes <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
             </div>
 
         </div>
     </main>
 
-    <footer class="py-12 text-center text-slate-400 text-xs uppercase tracking-widest font-bold">
-        &copy; 2025 Aditya Kumar Singh • Knowledge Base
+    <footer class="py-12 border-t border-slate-200 text-center">
+        <p class="text-slate-400 text-xs tracking-widest uppercase font-bold">
+            &copy; 2025 Aditya Kumar Singh • Shared under Educational License
+        </p>
     </footer>
 
 </body>
