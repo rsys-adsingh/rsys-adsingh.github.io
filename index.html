@@ -8,8 +8,8 @@
     <meta name="title" content="Aditya Kumar Singh | Senior Software Engineer">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="manifest" href="manifest.json">
-    <meta name="description" content="Portfolio of Aditya Kumar Singh, Senior Software Engineer at RadiSys and IIT Hyderabad M.Tech Graduate. Experience in C/C++, 5G-RAN, Linux performance optimization, Docker and Kubernetes.">
-    <meta name="keywords" content="Aditya Kumar Singh IIT Hyderabad, Aditya Kumar Singh IITH, Aditya Kumar Singh RadiSys, Aditya Singh IITH, Aditya Singh Radisys, Free GATE CSE Notes, GATE CSE, GATE Computer Science Notes,  Gate CSE Resources, Gate CSE Notes, Gate CSE Material, GATE Exam">
+    <meta name="description" content="Portfolio of Aditya Kumar Singh, Senior Software Engineer at RadiSys and IIT Hyderabad M.Tech Graduate. Dual expertise in C++ System Programming (5G-CRAN) and Java Application Development (CPaaS).">
+    <meta name="keywords" content="Aditya Kumar Singh IIT Hyderabad, Aditya Kumar Singh IITH, Aditya Kumar Singh RadiSys, Aditya Singh IITH, Aditya Singh Radisys, DPDK, CPaaS, Java, Kubernetes, 5G-RAN">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -36,7 +36,7 @@
         </div>
     </nav>
 
-    <header class="pt-32 pb-20 px-6">
+    <header class="pt-32 pb-20 px-6" id="about">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="relative">
                 <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-500 rounded-2xl blur opacity-25"></div>
@@ -51,7 +51,7 @@
                     Senior Software Engineer <span class="text-blue-700">@ <a href="https://www.radisys.com/" target="_blank" class="hover:underline">RadiSys</a></span> | M.Tech <a href="https://www.iith.ac.in/" target="_blank" class="text-blue-700 hover:underline">IIT Hyderabad</a>
                 </p>
                 <p class="text-slate-500 mb-8 max-w-xl text-lg font-medium">
-                    Software Engineer with strong experience in C/C++ system development, Linux performance optimization, and real-time distributed systems.
+                    Software Engineer with dual expertise in <b>C++ System Programming</b> (5G-CRAN, DPDK) and <b>Java Application Development</b> (CPaaS, MRF), specializing in low-latency Linux optimization and cloud-native Kubernetes orchestration.
                 </p>
                 
                 <div class="flex justify-center md:justify-start items-center gap-6 mb-10 text-slate-400">
@@ -80,20 +80,40 @@
                 <div class="border-l-4 border-blue-600 pl-8 relative">
                     <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[10px] top-0 shadow"></div>
                     <h3 class="text-xl font-bold">Senior Software Engineer (Cloud Engineering)</h3>
-                    <p class="text-blue-700 font-semibold mb-2">RadiSys India Limited • Mar 2023 — Present</p>
-                    <ul class="text-slate-600 space-y-2 list-disc ml-4 text-base font-medium">
-                        <li>Orchestrated 5G-RAN components using C/C++, Docker, and Kubernetes.</li>
-                        <li>Tuned CPU governors and optimized I/O pathways to resolve NUMA bottlenecks and minimize latency.</li>
-                        <li>Resolved complex distributed system issues and memory corruptions utilizing perf and gdb.</li>
-                    </ul>
+                    <p class="text-blue-700 font-semibold mb-6">RadiSys India Limited • Mar 2023 — Present</p>
+                    
+                    <div class="mb-8 bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fas fa-phone-alt text-blue-600"></i> CPaaS & SIP Call Control (Java)
+                        </h4>
+                        <ul class="text-slate-600 space-y-2 list-disc ml-5 text-base font-medium">
+                            <li>Engineered Java-based REST APIs and integrated the Cipango SIP stack via Servlets for real-time call signaling (INVITE, PRACK, BYE).</li>
+                            <li>Developed advanced Java utilities to extract and validate media IP/ports via SDP, resolving complex SIP interoperability issues.</li>
+                            <li>Refactored legacy Java codebases for multi-tenant environments and automated HTTP/HTTPS API deployments using Shell scripts.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                            <i class="fas fa-server text-blue-600"></i> 5G-CRAN Platform (C/C++ & Cloud)
+                        </h4>
+                        <ul class="text-slate-600 space-y-2 list-disc ml-5 text-base font-medium">
+                            <li>Designed and developed multiple DU application features including Multi-FH and Multi-MH connections.</li>
+                            <li>Built a custom Kubernetes controller in Go to automate 5G-RAN profile creation, reducing deployment effort by 30%.</li>
+                            <li>Optimized Linux system-level performance by tuning CPU governors and diagnosed NUMA bottlenecks to cut power usage by 15%.</li>
+                            <li>Performed root-cause analysis using GDB and ASan, and established a C++ unit testing framework achieving 90%+ code coverage.</li>
+                        </ul>
+                    </div>
                 </div>
+                
                 <div class="border-l-4 border-gray-200 pl-8 relative">
                     <h3 class="text-xl font-bold text-slate-700">Software Engineer (Cloud Platform)</h3>
-                    <p class="text-slate-500 font-semibold mb-2">Dremio Software • Aug 2022 — Feb 2023</p>
-                    <ul class="text-slate-600 space-y-2 list-disc ml-4 text-base font-medium">
-                        <li>Designed core billing infrastructure for Dremio Cloud using Java and MySQL.</li>
-                        <li>Integrated billing accounts with AWS Marketplace via TACKLE.</li>
-                        <li>Engineered reconciliation logic to ensure financial integrity across the cloud platform.</li>
+                    <p class="text-slate-500 font-semibold mb-4">Dremio Software • Aug 2022 — Feb 2023</p>
+                    <ul class="text-slate-600 space-y-2 list-disc ml-5 text-base font-medium">
+                        <li>Designed the core billing infrastructure for Dremio Cloud using Java and MySQL.</li>
+                        <li>Integrated billing accounts with AWS Marketplace via TACKLE, enabling seamless payment processing.</li>
+                        <li>Optimized query performance for BI/SQL clients by implementing Data Reflections, reducing latency by 30%.</li>
+                        <li>Engineered reconciliation logic to detect inconsistent replicas and automate credit reversals.</li>
                     </ul>
                 </div>
             </div>
@@ -108,15 +128,15 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
                 <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
                     <h3 class="font-bold text-lg mb-4 text-blue-700 uppercase tracking-wider">Programming</h3>
-                    <p class="text-slate-600 leading-loose font-medium text-base">C/C++, Java, Go Language, Python, MySQL</p>
+                    <p class="text-slate-600 leading-loose font-medium text-base">C/C++, Java (CPaaS), Golang, Python, MySQL, Bash</p>
                 </div>
                 <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
-                    <h3 class="font-bold text-lg mb-4 text-blue-700 uppercase tracking-wider">DevOps & Systems</h3>
-                    <p class="text-slate-600 leading-loose font-medium text-base">Docker, Kubernetes, 5G-RAN, O-RAN, OpenAirInterface (OAI), NS-3</p>
+                    <h3 class="font-bold text-lg mb-4 text-blue-700 uppercase tracking-wider">System & Network</h3>
+                    <p class="text-slate-600 leading-loose font-medium text-base">DPDK, eBPF, Docker, Kubernetes, 5G-RAN, CPaaS, MRF, SIP</p>
                 </div>
                 <div class="p-8 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition text-center">
                     <h3 class="font-bold text-lg mb-4 text-blue-700 uppercase tracking-wider">Tools & Debug</h3>
-                    <p class="text-slate-600 leading-loose font-medium text-base">Intel VTune, Linux Perf, GDB, Wireshark, Address Sanitizer</p>
+                    <p class="text-slate-600 leading-loose font-medium text-base">Intel VTune, Linux Perf, GDB, Wireshark, ASan, pidstat, numastat</p>
                 </div>
             </div>
         </div>
@@ -282,7 +302,7 @@
                                 <a href="http://coursera.org/verify/4H5PPE5H2Z8R" target="_blank" class="text-slate-500 hover:text-blue-400"><i class="fas fa-external-link-alt text-[10px]"></i></a>
                             </li>
                             <li class="flex items-center justify-between text-xs text-slate-300 font-bold text-white">
-                                <span>5. Capstone: Retrieving, Processing, and Visualizing Data with Python</span>
+                                <span>5. Capstone: Retrieving, Processing, and Visualizing Data</span>
                                 <a href="http://coursera.org/verify/SJ4PVULLY4BN" target="_blank" class="text-slate-500 hover:text-blue-400"><i class="fas fa-external-link-alt text-[10px]"></i></a>
                             </li>
                         </ul>
@@ -319,7 +339,7 @@
                 <h2 class="text-2xl font-bold">Study Resources</h2>
                 <p class="text-blue-100 mt-2">Access my curated notes on C/C++, Operating System, Computer Architecture, Computer Networking, Theory of Computation, Digital Logic and Short Notes.</p>
             </div>
-            <a href="studyresources.html" class="px-8 py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-slate-100 transition shadow-lg">
+            <a href="studyresources.html" class="px-8 py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-slate-100 transition shadow-lg whitespace-nowrap">
                 Browse Resources <i class="fas fa-arrow-right ml-2"></i>
             </a>
         </div>
