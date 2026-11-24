@@ -1,0 +1,376 @@
+$ objdump -f objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+architecture: i386:x86-64, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x0000000000000000
+
+
+
+$ objdump -h objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         0000002c  0000000000000000  0000000000000000  00000040  2**0
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000004  0000000000000000  0000000000000000  0000006c  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000004  0000000000000000  0000000000000000  00000070  2**2
+                  ALLOC
+  3 .rodata       00000003  0000000000000000  0000000000000000  00000070  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+
+
+$ objdump -t objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*	0000000000000000 objdump-demo.c
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .data	0000000000000000 .data
+0000000000000000 l    d  .bss	0000000000000000 .bss
+0000000000000000 l    d  .rodata	0000000000000000 .rodata
+0000000000000000 g     O .data	0000000000000004 counter
+0000000000000000 g     O .rodata	0000000000000003 message
+0000000000000000 g     O .bss	0000000000000004 scratch
+0000000000000000 g     F .text	0000000000000014 add
+0000000000000014 g     F .text	0000000000000018 main
+
+
+
+
+$ objdump -d -M intel objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+0000000000000014 <main>:
+  14:	55                   	push   rbp
+  15:	48 89 e5             	mov    rbp,rsp
+  18:	8b 05 00 00 00 00    	mov    eax,DWORD PTR [rip+0x0]        # 1e <main+0xa>
+  1e:	be 05 00 00 00       	mov    esi,0x5
+  23:	89 c7                	mov    edi,eax
+  25:	e8 00 00 00 00       	call   2a <main+0x16>
+  2a:	5d                   	pop    rbp
+  2b:	c3                   	ret
+
+
+$ objdump -d -M intel --disassemble=add objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+
+$ objdump -d --disassemble=add objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   %rbp
+   1:	48 89 e5             	mov    %rsp,%rbp
+   4:	89 7d fc             	mov    %edi,-0x4(%rbp)
+   7:	89 75 f8             	mov    %esi,-0x8(%rbp)
+   a:	8b 55 fc             	mov    -0x4(%rbp),%edx
+   d:	8b 45 f8             	mov    -0x8(%rbp),%eax
+  10:	01 d0                	add    %edx,%eax
+  12:	5d                   	pop    %rbp
+  13:	c3                   	ret
+
+
+$ objdump -s -j .data objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+Contents of section .data:
+ 0000 07000000                             ....            
+
+
+$ objdump -s -j .rodata objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 0000 486900                               Hi.             
+
+
+$ objdump -s -j .bss objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+Contents of section .bss:
+ 0000 00000000                             ....            
+
+
+$ objdump -r objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+RELOCATION RECORDS FOR [.text]:
+OFFSET           TYPE              VALUE
+000000000000001a R_X86_64_PC32     counter-0x0000000000000004
+0000000000000026 R_X86_64_PLT32    add-0x0000000000000004
+
+
+
+
+$ objdump -dr -M intel objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+0000000000000014 <main>:
+  14:	55                   	push   rbp
+  15:	48 89 e5             	mov    rbp,rsp
+  18:	8b 05 00 00 00 00    	mov    eax,DWORD PTR [rip+0x0]        # 1e <main+0xa>
+			1a: R_X86_64_PC32	counter-0x4
+  1e:	be 05 00 00 00       	mov    esi,0x5
+  23:	89 c7                	mov    edi,eax
+  25:	e8 00 00 00 00       	call   2a <main+0x16>
+			26: R_X86_64_PLT32	add-0x4
+  2a:	5d                   	pop    rbp
+  2b:	c3                   	ret
+
+
+$ objdump -D -M intel -j .data objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .data:
+
+0000000000000000 <counter>:
+   0:	07                   	(bad)
+   1:	00 00                	add    BYTE PTR [rax],al
+	...
+
+
+$ objdump -d -M intel --start-address=0 --stop-address=0x14 objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+
+$ objdump -d -M intel --disassemble=add --no-show-raw-insn objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	push   rbp
+   1:	mov    rbp,rsp
+   4:	mov    DWORD PTR [rbp-0x4],edi
+   7:	mov    DWORD PTR [rbp-0x8],esi
+   a:	mov    edx,DWORD PTR [rbp-0x4]
+   d:	mov    eax,DWORD PTR [rbp-0x8]
+  10:	add    eax,edx
+  12:	pop    rbp
+  13:	ret
+
+
+$ objdump -d -M intel --disassemble=add -F objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add> (File Offset: 0x40):
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+
+$ objdump -d -M intel --disassemble=add --adjust-vma=0x1000 objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000001000 <add>:
+    1000:	55                   	push   rbp
+    1001:	48 89 e5             	mov    rbp,rsp
+    1004:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+    1007:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+    100a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+    100d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+    1010:	01 d0                	add    eax,edx
+    1012:	5d                   	pop    rbp
+    1013:	c3                   	ret
+
+
+$ objdump -S -M intel --disassemble=add objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <add>:
+   0:	55                   	push   rbp
+   1:	48 89 e5             	mov    rbp,rsp
+   4:	89 7d fc             	mov    DWORD PTR [rbp-0x4],edi
+   7:	89 75 f8             	mov    DWORD PTR [rbp-0x8],esi
+   a:	8b 55 fc             	mov    edx,DWORD PTR [rbp-0x4]
+   d:	8b 45 f8             	mov    eax,DWORD PTR [rbp-0x8]
+  10:	01 d0                	add    eax,edx
+  12:	5d                   	pop    rbp
+  13:	c3                   	ret
+
+
+$ objdump -T objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+DYNAMIC SYMBOL TABLE:
+no symbols
+
+
+objdump: objdump-reference.o: not a dynamic object
+
+
+$ objdump -R objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+DYNAMIC RELOCATION RECORDS (none)
+
+objdump: objdump-reference.o: not a dynamic object
+
+
+$ objdump -p objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+
+$ objdump --map-global-vars objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+
+$ objdump --dwarf=info objdump-reference.o
+
+objdump-reference.o:     file format elf64-x86-64
+
+
+
+$ objdump -t objdump-cpp-reference.o
+
+objdump-cpp-reference.o:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*	0000000000000000 objdump-demo.c
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .data	0000000000000000 .data
+0000000000000000 l    d  .bss	0000000000000000 .bss
+0000000000000000 l    d  .rodata	0000000000000000 .rodata
+0000000000000000 g     O .data	0000000000000004 counter
+0000000000000000 g     O .rodata	0000000000000003 message
+0000000000000000 g     O .bss	0000000000000004 scratch
+0000000000000000 g     F .text	0000000000000014 _Z3addii
+0000000000000014 g     F .text	0000000000000018 main
+
+
+
+
+$ objdump -tC objdump-cpp-reference.o
+
+objdump-cpp-reference.o:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000000000 l    df *ABS*	0000000000000000 objdump-demo.c
+0000000000000000 l    d  .text	0000000000000000 .text
+0000000000000000 l    d  .data	0000000000000000 .data
+0000000000000000 l    d  .bss	0000000000000000 .bss
+0000000000000000 l    d  .rodata	0000000000000000 .rodata
+0000000000000000 g     O .data	0000000000000004 counter
+0000000000000000 g     O .rodata	0000000000000003 message
+0000000000000000 g     O .bss	0000000000000004 scratch
+0000000000000000 g     F .text	0000000000000014 add(int, int)
+0000000000000014 g     F .text	0000000000000018 main
+
+
+
+
+$ objdump --version
+GNU objdump (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r2) 2.47.20260726
+Copyright (C) 2026 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
+
+
+$ objdump -V
+GNU objdump (Binutils for MinGW-W64 x86_64, built by Brecht Sanders, r2) 2.47.20260726
+Copyright (C) 2026 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.
