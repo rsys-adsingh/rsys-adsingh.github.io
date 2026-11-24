@@ -1,0 +1,5 @@
+Pointer: 4 bytes
+int: 4 bytes
+long: 4 bytes
+uint64_t: 8 bytes
+Value: 4294967296
