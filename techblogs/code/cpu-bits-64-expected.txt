@@ -1,5 +1,0 @@
-Pointer: 8 bytes
-int: 4 bytes
-long: 8 bytes
-uint64_t: 8 bytes
-Value: 4294967296
